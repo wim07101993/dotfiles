@@ -50,13 +50,14 @@ set wildignore=*.pdf,*.png,*.jpg,*.gif,*.exe
 call plug#begin('~/.vim/plugged')
 
     Plug 'dense-analysis/ale'
+    Plug 'dart-lang/dart-vim-plugin'
     Plug 'preservim/nerdtree'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    Plug 'valloric/youcompleteme'
-    Plug 'dart-lang/dart-vim-plugin'
+    Plug 'fatih/vim-go', { 'for': 'go', 'do': 'GoUpdateBinaries' }
     Plug 'natebosch/vim-lsc'
-    Plug 'natebosch/vim-lsc-dart'
+    Plug 'natebosch/vim-lsc-dart', { 'for': 'dart' }
+    Plug 'valloric/youcompleteme'
 
 call plug#end()
 
