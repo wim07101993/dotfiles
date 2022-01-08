@@ -46,6 +46,8 @@ set wildmenu
 set wildmode=list:longest
 set wildignore=*.pdf,*.png,*.jpg,*.gif,*.exe
 
+set clipboard=unnamedplus
+
 " }}}
 
 " PLUGINS ---------------------------------------------------------------- {{{
