@@ -14,6 +14,9 @@ filetype indent on
 " enable syntax highlighting
 syntax on
 
+" keep cursor away from top and bottom
+set so=20
+
 " display line-numbers
 set number
 
