@@ -52,11 +52,13 @@ call plug#begin('~/.vim/plugged')
     Plug 'dense-analysis/ale'
     Plug 'dart-lang/dart-vim-plugin'
     Plug 'preservim/nerdtree'
+    Plug 'godlygeek/tabular'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'fatih/vim-go', { 'for': 'go', 'do': 'GoUpdateBinaries' }
     Plug 'natebosch/vim-lsc'
     Plug 'natebosch/vim-lsc-dart', { 'for': 'dart' }
+    Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
     Plug 'valloric/youcompleteme'
 
 call plug#end()
@@ -89,10 +91,10 @@ nnoremap N Nzz
 
 " Pressing ENTER adds a new line below the current line without going into
 " inser mode
-nnoremap cr o<esc>
-" Pressing SHIFT-ENTER adds a new line above the current one without going 
+"nnoremap cr o<esc>
+" Pressing SHIFT-ENTER adds a new line below the current one without going 
 " into insert mode
-nnoremap OM O<esc>
+nnoremap OM o<esc>
 
 " Yank form cursor to the end of line
 nnoremap Y y$
