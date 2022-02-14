@@ -15,7 +15,7 @@ filetype indent on
 syntax on
 
 " keep cursor away from top and bottom
-set so=20
+set so=10
 
 " display line-numbers
 set number
@@ -166,3 +166,6 @@ let g:dart_format_on_save = 1
 let g:dart_style_guid = 2
 
 " }}}
+
+set visualbell
+set noerrorbells
