@@ -4,7 +4,7 @@ set guifont=Hack:h10:cANSI
 set nocompatible
 set background=dark
 colorscheme solarized
-"let g:solarized_termcolors=256
+let g:solarized_termcolors=256
 
 " enable filetype detection
 filetype on
