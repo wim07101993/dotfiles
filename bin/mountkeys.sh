@@ -32,8 +32,6 @@ fi
 
 gpgdir="$HOME/.gnupg"
 [[ ! -L "$gpgdir" ]] && ln -s "$KEYS/.gnupg" "$gpgdir"
-sshdir="$HOME/.ssh"
-[[ ! -L "$sshdir"  ]] && ln -s "$KEYS/.ssh" "$sshdir"
 
 ssh_unitfile="$HOME/.config/systemd/user/ssh-agent.service"
 if [[ ! -L "$ssh_unitfile" ]]; then
@@ -42,4 +40,4 @@ if [[ ! -L "$ssh_unitfile" ]]; then
   systemctl enable ssh-agent.service --now --user
 fi
 
-ssh-add "$HOME/.ssh/github"
+ssh-add "$KEYS/.ssh/github"
