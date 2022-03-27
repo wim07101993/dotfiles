@@ -49,6 +49,8 @@ logInfo "installing vim"
 source "$DOTFILES/install_scripts/install_vim.sh"
 logInfo "installing vpn"
 source "$DOTFILES/install_scripts/install_nordvpn.sh"
+logInfo "installing sdks"
+source "$DOTFILES/install_scripts/install_sdks.sh"
 logInfo "installing other packages"
 source "$DOTFILES/install_scripts/install_packages.sh"
 
