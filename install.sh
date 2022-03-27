@@ -8,6 +8,15 @@ logInfo() {
   echo -e "\033[34;1;4m $1 \033[0m"
 }
 
+maybeAddLineToFile(){
+  line=$1
+  file=$2
+  [[ -f "$file" ]] && grep -qxF "$line" "$file" || echo "$line" >> "$file"
+}
+
+sudo pamac update
+sudo pamac upgrade
+
 export SOURCE="$HOME/source"
 export REPOS="$SOURCE/repos"
 export DOTFILES="$REPOS/dotfiles"
@@ -27,13 +36,15 @@ source "$DOTFILES/shell_rc.sh"
 logInfo "set up symlinks"
 [[ ! -L "$HOME/.vimrc" ]] && ln -s "$DOTFILES/vim/.vimrc" "$HOME/.vimrc"
 [[ ! -L "$HOME/.ideavimrc" ]] && ln -s "$DOTFILES/vim/.vimrc" "$HOME/.ideavimrc"
-[[ -f "$HOME/.bash_profile" ]] && echo "source $DOTFILES/shell_profile.sh" >> "$HOME/.bash_profile"
-[[ -f "$HOME/.bash_rc" ]] && echo "source $DOTFILES/shell_rc.sh" >> "$HOME/.bashrc"
-[[ -f "$HOME/.zshrc" ]] && echo "source $DOTFILES/shell_profile.sh" >> "$HOME/.zshrc"
-[[ -f "$HOME/.zshrc" ]] && echo "source $DOTFILES/shell_rc.sh" >> "$HOME/.zshrc"
+maybeAddLineToFile "source $DOTFILES/shell_profile.sh" "$HOME/.bash_profile"
+maybeAddLineToFile "source $DOTFILES/shell_rc.sh" "$HOME/.bashrc"
+maybeAddLineToFile "source $DOTFILES/shell_profile.sh" "$HOME/.zshrc"
+maybeAddLineToFile "source $DOTFILES/shell_rc.sh" "$HOME/.zshrc"
+
+exit
 
 logInfo "installing keys"
-source "$DOTFILES/install_scripts/setup_keys.sh"
+source "$DOTFILES/bin/mountkeys.sh"
 logInfo "installing vim"
 source "$DOTFILES/install_scripts/install_vim.sh"
 logInfo "installing vpn"
