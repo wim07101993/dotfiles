@@ -16,6 +16,7 @@ maybeAddLineToFile(){
 
 sudo pamac update
 sudo pamac upgrade
+sudo pamac install git
 
 export SOURCE="$HOME/source"
 export REPOS="$SOURCE/repos"

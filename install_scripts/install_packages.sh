@@ -4,9 +4,10 @@
 gpg --auto-key-locate nodefault,wkd --locate-keys torbrowser@torproject.org
 sudo pamac install \
   base-devel \
-  jetbrains-toolbox code \
+  intellij-idea-ultimate-edition android-studio code vim \
   google-chrome nordvpn-bin tor-browser qbittorrent filezilla \
-  spotify lilypond frescobaldi youtube-dl \
+  spotify lilypond frescobaldi \
+  gimp youtube-dl
   discord \
   --no-confirm
 
