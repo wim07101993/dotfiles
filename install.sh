@@ -18,6 +18,9 @@ sudo pamac update
 sudo pamac upgrade
 sudo pamac install git
 
+git config --global user.email "van.laer.wim@gmail.com"
+git config --global user.name "Wim Van Laer"
+
 export SOURCE="$HOME/source"
 export REPOS="$SOURCE/repos"
 export DOTFILES="$REPOS/dotfiles"
@@ -31,7 +34,7 @@ else
   (cd "$DOTFILES" && git pull)
 fi
 
-cp -f "$DOTFILES/etc/pamac.conf" "/etc/pamac.conf"
+sudo cp -f "$DOTFILES/etc/pamac.conf" "/etc/pamac.conf"
 
 source "$DOTFILES/shell_profile.sh"
 source "$DOTFILES/shell_rc.sh"

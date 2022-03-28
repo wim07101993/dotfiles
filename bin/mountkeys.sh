@@ -8,15 +8,7 @@ nc="\033[0m"
 export KEYS="/mnt/keys"
 [[ ! -d "$KEYS" ]] && sudo mkdir -p "$KEYS"
 
-toInstall=()
-[[ ! $(pacman -Qn bitwarden) ]] && toInstall+=("bitwarden")
-[[ ! $(pacman -Qn veracrypt) ]] && toInstall+=("veracrypt")
-if ((${#toInstall[@]})); then
-  # shellcheck disable=SC2086
-  # shellcheck disable=SC2128
-  sudo pacman -Syu $toInstall --noconfirm
-fi
-
+pamac install veracrypt bitwarden --no-confirm
 mountedDevices=$(veracrypt -t -l)
 if [[  $mountedDevices =~ .*"$KEYS".* ]]; then
   echo -e "$warning Warning: A directory was already mounted to $KEYS $nc"
