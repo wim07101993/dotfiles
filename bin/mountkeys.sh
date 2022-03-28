@@ -33,6 +33,7 @@ fi
 gpgdir="$HOME/.gnupg"
 [[ ! -L "$gpgdir" ]] && ln -s "$KEYS/.gnupg" "$gpgdir"
 
+mkdir -p "$HOME/.config/systemd/user/"
 ssh_unitfile="$HOME/.config/systemd/user/ssh-agent.service"
 if [[ ! -L "$ssh_unitfile" ]]; then
   echo -e "$info creating ssh-agent.service $nc"

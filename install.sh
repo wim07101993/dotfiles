@@ -31,6 +31,8 @@ else
   (cd "$DOTFILES" && git pull)
 fi
 
+cp -f "$DOTFILES/etc/pamac.conf" "/etc/pamac.conf"
+
 source "$DOTFILES/shell_profile.sh"
 source "$DOTFILES/shell_rc.sh"
 
@@ -41,8 +43,6 @@ maybeAddLineToFile "source $DOTFILES/shell_profile.sh" "$HOME/.bash_profile"
 maybeAddLineToFile "source $DOTFILES/shell_rc.sh" "$HOME/.bashrc"
 maybeAddLineToFile "source $DOTFILES/shell_profile.sh" "$HOME/.zshrc"
 maybeAddLineToFile "source $DOTFILES/shell_rc.sh" "$HOME/.zshrc"
-
-exit
 
 logInfo "installing keys"
 source "$DOTFILES/bin/mountkeys.sh"
