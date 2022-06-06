@@ -1,0 +1,18 @@
+#!/bin/bash
+
+ info="\033[34;1;4m"
+ warning="\033[33;1;4m"
+ question="\033[32;1;1m"
+ nc="\033[0m"
+ 
+ unitFiles="$HOME/.config/systemd/user/"
+ 
+ mkdir -p "$unitFiles"
+ ssh_unitfile="$unitFiles/ssh-agent.service"
+ if [[ ! -L "$ssh_unitfile" ]]; then
+   echo -e "$info creating ssh-agent.service $nc"
+   ln -s "$DOTFILES/systemd/ssh-agent.service" "$ssh_unitfile"
+   systemctl enable ssh-agent.service --now --user
+ fi
+ 
+ ssh-add "$HOME/.ssh/github"                                                                                                                                                                                                             

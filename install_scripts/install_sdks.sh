@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo pamac install unzip google-chrome android-studio --no-confirm
+sudo pamac install unzip google-chrome --no-confirm
 
 flutterDir="$REPOS/flutter"
 [[ ! -d "$flutterDir" ]] && git clone "https://github.com/flutter/flutter" "$flutterDir"
