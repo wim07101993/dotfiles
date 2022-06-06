@@ -11,7 +11,7 @@ pamac install \
   google-chrome tor-browser nordvpn-bin qbittorrent filezilla \
   spotify lilypond frescobaldi \
   gimp youtube-dl \
-  --no-confirm 
+  --no-confirm
 #  discord \
 
 
