@@ -48,7 +48,7 @@ maybeAddLineToFile "source $DOTFILES/shell_profile.sh" "$HOME/.zshrc"
 maybeAddLineToFile "source $DOTFILES/shell_rc.sh" "$HOME/.zshrc"
 
 logInfo "installing keys"
-source "$DOTFILES/bin/mountkeys.sh"
+#source "$DOTFILES/bin/mountkeys.sh"
 logInfo "installing vim"
 source "$DOTFILES/install_scripts/install_vim.sh"
 logInfo "installing vpn"
