@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=XSession
+Exec=env KDEWM=/usr/bin/i3 TERMINAL=alacritty /usr/bin/startplasma-x11
+DestopNames=KDE
+Name=Plasma with i3
+Comment=Plasma with i3

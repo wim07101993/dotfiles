@@ -3,9 +3,8 @@
 set encoding=utf-8
 set guifont=Hack:h10:cANSI
 set nocompatible
-set background=dark
+set background=light
 colorscheme solarized
-let g:solarized_termcolors=256
 
 " enable filetype detection
 filetype on
